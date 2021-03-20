@@ -1,0 +1,14 @@
+<annotation>
+	<folder>camera_1</folder>
+	<filename>202103071540.jpg</filename>
+	<path>G:\ivision\code\labels\camera_1\202103071540.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>
