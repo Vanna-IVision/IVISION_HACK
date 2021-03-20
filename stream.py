@@ -5,9 +5,10 @@ import os
 app = Flask(__name__)
 
 detector = ParkingSlotDetection()
-camera1_path = r"G:\ivision\hsOJsEu\camera_1.mp4"
-camera3_path = r"G:\ivision\hsOJsEu\camera_3.mp4"
 execution_path = os.getcwd()
+camera1_path = os.path.join(execution_path,"camera_1.mp4")
+camera3_path = os.path.join(execution_path,"camera_3.mp4")
+
 labels_camera1_path = os.path.join(execution_path,"labels","camera_1")
 labels_camera3_path = os.path.join(execution_path,"labels","camera_3")
 

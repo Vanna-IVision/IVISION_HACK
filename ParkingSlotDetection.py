@@ -11,11 +11,11 @@ roi_1_coords = (442, 478, 567, 237)
 roi_2_coords = (914, 540, 662, 260)
 def_rois = [roi_1_coords, roi_2_coords]
 
-
-
+execution_path = os.getcwd()
+labels_camera1_path = os.path.join(execution_path,"labels","camera_1")
 
 class ParkingSlotDetection:
-    def __init__(self, labels_path=r"G:\ivision\code\labels\camera_1", thresh=0.31, rois=def_rois):
+    def __init__(self, labels_path=labels_camera1_path, thresh=0.31, rois=def_rois):
         self.thresh = thresh
 
         execution_path = os.getcwd()
