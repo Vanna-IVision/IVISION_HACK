@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+resnet50_coco_best_v2.1.0.h5
