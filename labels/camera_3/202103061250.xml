@@ -1,7 +1,7 @@
 <annotation>
 	<folder>camera_3</folder>
 	<filename>202103061250.jpg</filename>
-	<path>G:\ivision\code\labels\camera_3\202103061250.jpg</path>
+	<path>G:\ivision\tt\IVISION_HACK\labels\camera_3\202103061250.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -113,22 +113,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>379</xmin>
-			<ymin>461</ymin>
-			<xmax>460</xmax>
-			<ymax>531</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>car</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>354</xmin>
-			<ymin>442</ymin>
-			<xmax>438</xmax>
-			<ymax>509</ymax>
+			<xmin>360</xmin>
+			<ymin>450</ymin>
+			<xmax>441</xmax>
+			<ymax>520</ymax>
 		</bndbox>
 	</object>
 </annotation>

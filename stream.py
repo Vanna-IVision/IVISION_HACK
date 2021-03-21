@@ -4,8 +4,10 @@ from ParkingSlotDetection import ParkingSlotDetection
 import os
 app = Flask(__name__)
 
-detector = ParkingSlotDetection()
 execution_path = os.getcwd()
+print(execution_path)
+detector = ParkingSlotDetection()
+
 camera1_path = os.path.join(execution_path,"camera_1.mp4")
 camera3_path = os.path.join(execution_path,"camera_3.mp4")
 
