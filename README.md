@@ -1,12 +1,17 @@
 <h1 align="center">✨ Parking Vision ✨</h1>
 
 <p align="center">  
+  
+
+<img src="https://img.shields.io/github/watchers/Vanna-IVision/IVISION_HACK.svg?style=social&label=Watch&maxAge=2592000">
 
 <img src="https://img.shields.io/badge/made%20by-Vanna-yellow.svg" >
 
 <img src="https://img.shields.io/badge/python-3.8 -blueviolet.svg">
 
 <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" >
+
+<img src="https://img.shields.io/github/contributors/Vanna-IVision/IVISION_HACK.svg" >
 
 <img src="https://img.shields.io/github/stars/Vanna-IVision/IVISION_HACK.svg?style=flat">
 
