@@ -1,4 +1,4 @@
-<h1 align="center"> Parking Vision 🚗</h1>
+<h1 align="center">✨ Parking Vision ✨</h1>
 
 <p align="center">  
 
@@ -18,7 +18,6 @@
 
 <p align="center"><img  src="./readme_asserts/logo.png" width="40%"></p>
 
-[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell) | [![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608)
 
 <h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera1">Развернутый сервис для парковки на пр. Ленина</a></h2>
 <h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera3">Развернутый сервис для парковки на ул. Анохина</a></h2>
@@ -39,6 +38,7 @@
 
 Сервис реализован для распознавания свободных мест на парковке автомобилей. Возможна поддержка в режиме "онлайн".
 Пользователь сможет заранее проверить парковку на наличие и количество свободных мест при просмотре конкретного видеопотока.
+При разработке сервиса были **учтены дорожные знаки**. Благодаря им было определено начало парковочной зоны (знак 🅿️) и не затронуты места только для инвалидов (знак ♿).
 
 Парковка на пр. Ленина             |  Парковка на ул. Анохина
 :-------------------------:|:-------------------------:
@@ -132,7 +132,7 @@ https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet5
 ### Архитектура
 
 <p align="left">
-<img src="./readme_asserts/sheme.png" width="80%"></p> 
+<img src="./readme_asserts/Архитектура.jpg" width="40%"></p> 
 
 <a name="computer_vision_and_machine_learning"></a> 
 ### Computer Vision & Machine Learning
@@ -176,6 +176,8 @@ https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet5
 - Изменить пути для файлов camera_1.mp4 и camera_3.mp4
 - `python stream.py`
 
+##
+[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell) | [![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608)
 
 
 <p align="right" ><img src="./readme_asserts/11.jpg" width="10%"></p>
