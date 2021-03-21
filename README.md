@@ -144,7 +144,7 @@ https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet5
 
 
 <a name="how_to_install"></a> 
-### ***How to install***
+## ***How to install***
 
 - Установить все зависимости для ImageAI:
 
