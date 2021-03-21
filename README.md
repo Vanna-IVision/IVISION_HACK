@@ -15,10 +15,12 @@
 <img src="https://img.shields.io/github/issues/Vanna-IVision/IVISION_HACK.svg">
 
 </p>
-  
-[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell)
  
-[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608) 
+<p align="center"> 
+  
+[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell) | [![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608) 
+
+</p>
 
 <p align="center"><img  src="./readme_asserts/logo.png" width="40%"></p>
 
