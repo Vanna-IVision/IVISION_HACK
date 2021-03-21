@@ -18,8 +18,8 @@
 
 <p align="center"><img  src="./readme_asserts/logo.png" width="40%"></p>
 
-<h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera1/">Развернутый сервис для парковки на пр. Ленина</a></h2>
-<h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera3/">Развернутый сервис для парковки на ул. Анохина</a></h2>
+<h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera1">Развернутый сервис для парковки на пр. Ленина</a></h2>
+<h2 align="center"><a target="_blank" href="http://89.20.57.27:5000/camera3">Развернутый сервис для парковки на ул. Анохина</a></h2>
 
 ## ***Навигация***
 - [Описание](#описание)
