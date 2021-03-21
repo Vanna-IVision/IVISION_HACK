@@ -4,7 +4,7 @@
 
 <img src="https://img.shields.io/badge/made%20by-Vanna-yellow.svg" >
 
-<img src="https://img.shields.io/badge/python-3.8 -green.svg">
+<img src="https://img.shields.io/badge/python-3.8 -blueviolet.svg">
 
 <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" >
 
@@ -15,6 +15,10 @@
 <img src="https://img.shields.io/github/issues/Vanna-IVision/IVISION_HACK.svg">
 
 </p>
+  
+[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell)
+ 
+[![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608) 
 
 <p align="center"><img  src="./readme_asserts/logo.png" width="40%"></p>
 
@@ -23,7 +27,8 @@
 
 ## ***Навигация***
 - [Описание](#описание)
-- [Руководство пользователя](#руководство_пользователя)
+- [Возможные неполадки](#возможные_неполадки)
+- [Как пользоваться сервисом](#как_пользоваться)
 - [Почему это работает?](#почему_это_работает)
 - [О проекте и технологиях](#о_проекте_и_технологиях)
   - [Архитектура](#архитектура)
@@ -34,8 +39,6 @@
 <a name="описание"></a> 
 ## ***Описание***
 
-**Руководство пользователя**
-
 Сервис реализован для распознавания свободных мест на парковке автомобилей. Возможна поддержка в режиме "онлайн".
 Пользователь сможет заранее проверить парковку на наличие и количество свободных мест при просмотре конкретного видеопотока.
 
@@ -43,10 +46,23 @@
 :-------------------------:|:-------------------------:
 ![](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/gif1.gif)  |  ![](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/gif2.gif)
 
+<a name="возможные_неполадки"></a> 
+## ***Возможные неполадки***
 
-**Над созданием проекта работают [Виктор](https://github.com/victor30608), [Анна](https://github.com/elladiell)** .
+При использовании сервиса возможно некорректное отображение парковочного места.
 
-<a name="руководство_пользователя"></a> 
+Пример некорректного отображения на парковке пр. Ленина
+:-------------------------:
+<img src="./readme_asserts/gif4.gif" width="60%"></p>
+
+Баги, подобные тем, что изображены выше появляются по следующей причине:
+- На данном этапе разработки сервис работает с использованием одной видеокарты и одной модели. Конкурентное обращение не разрешается.
+
+**Решение проблемы:**
+
+Смотреть запись сервиса с использованием **одного** потока. То есть, не запускать параллельно одну и ту же камеру с нескольких устройств.
+
+<a name="как_пользоваться"></a> 
 ## ***Как пользоваться сервисом***
 
 **Перейти по ссылке с нужным номером камеры.**
@@ -124,10 +140,9 @@ https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet5
 ### Computer Vision & Machine Learning
 
 **Технонологии**:
-
-**Нейронные сети** :
-
-**Получение эмбеддинга** :
+- [OpenCV](https://opencv.org/)
+- [ImageAI](http://www.imageai.org/)
+- [ffmpeg](https://www.ffmpeg.org/)
 
 <a name="подводные_камни"></a> 
 ### ***Подводные камни***
@@ -154,14 +169,14 @@ https://github.com/OlafenwaMoses/ImageAI#installation
 
 - Установить пакеты из requirements.txt:
 
-  *pip install –r requirements.txt* 
+  `pip install –r requirements.txt`
        
 - Скачать  модель и добавить ее в папку проекта 
 
 https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet50_coco_best_v2.1.0.h5
 
 - Изменить пути для файлов camera_1.mp4 и camera_3.mp4
-- python stream.py
+- `python stream.py`
 
 
 
