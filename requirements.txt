@@ -1,7 +1,9 @@
-imageai==2.1.6
-Flask==1.1.1
+opencv_python==4.5.1.48
+imutils==0.5.3
 ~umpy==1.16.5
-opencv_python==4.4.0.44
-numpy==1.20.1
-pyTelegramBotAPI==3.7.7
+imageai==2.1.6
+Keras==2.2.5
+Flask==1.1.1
+numpy==1.20.2
 telebot==0.0.4
+pyTelegramBotAPI==3.7.7
