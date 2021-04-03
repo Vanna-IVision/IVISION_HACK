@@ -17,7 +17,7 @@ labels_camera1_path = os.path.join(execution_path,"labels","camera_1")
 
 
 class ParkingSlotDetection:
-    def __init__(self, labels_path=labels_camera1_path, thresh=0.31, rois=def_rois,v1=True,camera_id=None):
+    def __init__(self, labels_path=labels_camera1_path, thresh=0.31, rois=def_rois,v1=False,camera_id=None):
         self.camera_id = camera_id
         self.thresh = thresh
         self.count = 0
