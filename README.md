@@ -182,7 +182,8 @@ https://disk.yandex.ru/d/abwzNvzqsmM8Dg
 
 - `python telegram_bot.py`
 - `python stream.py`
-
+- Для того, чтобы корректно отображалось количество машин на карте и приходили уведомления в Telegram, необходимо, чтобы ВСЕГДА была открыта одна вкладка с сервисом:
+- http://89.20.57.27:5000/camera
 ##
 [![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-%20Anna-orange.svg)](https://github.com/elladiell) | [![создано](https://github.com/Vanna-IVision/IVISION_HACK/blob/main/readme_asserts/created%20by-Victor-blue.svg)](https://github.com/victor30608)
 
