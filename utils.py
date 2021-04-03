@@ -1,5 +1,5 @@
 import cv2
-
+import json
 def bb_intersection_over_union(boxA, boxB):
     # determine the (x, y)-coordinates of the intersection rectangle
     xA = max(boxA[0], boxB[0])
@@ -39,9 +39,6 @@ def get_parking_boxes(path):
     return boxes
 
 
-    return data
-
-
 def reset(arr):
     for i in range(len(arr)):
         for j in range(len(arr[i])):
@@ -60,3 +57,21 @@ def draw_result(image,show_value,ind,fill_percentage,thresh,parking_places):
                 image = cv2.rectangle(image, (x0, y0), (x1, y1), color, thickness)
 
     return image
+
+def draw_result_v2(image,ind,pred,parking_places,show_value):
+    image = cv2.putText(image, "Free spots: " + str(show_value), (100, 200), cv2.FONT_HERSHEY_SIMPLEX, 2,
+                        (0, 0, 255), 10, cv2.LINE_AA)
+    color = (200, 10, 200)
+    thickness = 6
+    for id, val in enumerate(pred[ind]):
+        if val:
+            x0, y0, x1, y1 = parking_places[ind][id]
+            image = cv2.rectangle(image, (x0, y0), (x1, y1), color, thickness)
+
+    return image
+
+
+def get_free_from_json():
+    with open('data.json') as json_data:
+        d = json.load(json_data)
+    return d["value"]

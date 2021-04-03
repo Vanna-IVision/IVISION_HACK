@@ -1,9 +1,76 @@
-<html>
-  <head>
-    <title>IVISON HACK</title>
-  </head>
-  <body>
-    <h1>BAHHA TEAM</h1>
-    <img src="{{ url_for('video_feed') }}">
-  </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA=Compatible" content="ie=edge">
+    <title>Google maps geolocation</title>
+    <style>
+        #map {
+            height: 900px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>>
+
+    <script>
+
+    
+        function initMap(){
+
+            var num_Lenina = -1;
+
+
+            var pos = {lat: 61.789782, lng: 34.362316}
+            var opt = {
+                center: pos,
+                zoom: 16,
+            }
+
+            var map = new google.maps.Map(document.getElementById("map"), opt);
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title:"Парковка на пл. Ленина",
+                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+
+
+            })
+
+            
+            var info = new google.maps.InfoWindow({
+                content: '<h3>Парковка на пл. Ленина </h3><p>Свободных парковочных мест: </p> ' + num_Lenina + '<p><a href="http://89.20.57.27:5000/camera1">Ссылка на видеопоток</a></p>'
+                //content: '<h3>Парковка на пл. Ленина </h3><p>Свободных парковочных мест: </p> ' + num_Lenina + '<iframe width="500" height="300" src="http://89.20.57.27:5000/camera1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> '
+            })
+            
+
+            info.open(map, marker)
+
+            marker.addListener("click", function(){
+                info.open(map, marker);
+            })
+
+
+            var marker2 = new google.maps.Marker({
+                position: {lat:61.787017, lng: 34.348812},
+                map: map,
+                title:"Парковка на ул. Анохина",
+                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            })
+            var info2 = new google.maps.InfoWindow({
+                content: '<h3>Парковка на ул. Анохина</h3><p>Свободных парковочных мест: </p>' + " " + '<p><a href="http://89.20.57.27:5000/camera3">Ссылка на видеопоток</a></p>'
+            })
+
+            info2.open(map, marker2)
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD5VahHTJq218-tNMf8m_8xZ-TqXagN2s&callback=initMap" async
+    defer></script>
+    
+<body>
 </html>

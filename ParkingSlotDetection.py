@@ -3,9 +3,10 @@ import os
 from time import time
 import cv2
 from utils import *
-
+from keras.models import load_model
 import copy
 import numpy as np
+import json
 
 roi_1_coords = (442, 478, 567, 237)
 roi_2_coords = (914, 540, 662, 260)
@@ -14,17 +15,26 @@ def_rois = [roi_1_coords, roi_2_coords]
 execution_path = os.getcwd()
 labels_camera1_path = os.path.join(execution_path,"labels","camera_1")
 
+
 class ParkingSlotDetection:
-    def __init__(self, labels_path=labels_camera1_path, thresh=0.31, rois=def_rois):
+    def __init__(self, labels_path=labels_camera1_path, thresh=0.31, rois=def_rois,v1=True,camera_id=None):
+        self.camera_id = camera_id
         self.thresh = thresh
-
+        self.count = 0
         execution_path = os.getcwd()
-        self.detector = ObjectDetection()
-        self.detector.setModelTypeAsRetinaNet()
-        self.detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.1.0.h5"))
-        self.detector.loadModel()
+        self.v1 = v1
+        if v1:
+            self.detector = ObjectDetection()
+            self.detector.setModelTypeAsRetinaNet()
+            self.detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.1.0.h5"))
+            self.detector.loadModel()
 
-        self.custom_objects = self.detector.CustomObjects(car=True, bus=True, truck=True)
+            self.custom_objects = self.detector.CustomObjects(car=True, bus=True, truck=True)
+        else:
+            IMAGE_WIDTH = 110
+            IMAGE_HEIGHT = 110
+            self.dim =(IMAGE_WIDTH, IMAGE_HEIGHT)
+            self.detector = load_model(os.path.join(execution_path,'model_ivision_4.h5'))
 
         self.load_labels(labels_path)
 
@@ -117,15 +127,55 @@ class ParkingSlotDetection:
 
         numpy_horizontal_concat = np.concatenate((min_image, max_image), axis=0)
 
-        # ind = np.argmin(counts)
-        # show_value = counts[ind]
-        # image = cv2.putText(image, "Free spots: " + str(show_value), (100, 200), cv2.FONT_HERSHEY_SIMPLEX, 2,
-        #                     (100, 50, 255), 10, cv2.LINE_AA)
-        # for id, val in enumerate(self.fill_percentage[ind]):
-        #     if val < self.thresh:
-        #         x0, y0, x1, y1 = self.parking_places[ind][id]
-        #         color = (255, 0, 0)
-        #         thickness = 2
-        #         image = cv2.rectangle(image, (x0, y0), (x1, y1), color, thickness)
+        return numpy_horizontal_concat
+
+
+    def process_v2(self,image):
+        self.count+=1
+        t = time()
+        pred = []
+        for part in self.parking_places:
+            batch = []
+            for place in part:
+                x, y, w, h = place
+                w = w - x
+                h = h - y
+                roi = image[y:y + h, x:x + w]
+                roi = cv2.resize(roi, self.dim, interpolation=cv2.INTER_CUBIC)
+                batch.append(roi)
+
+            batch = np.stack(batch)
+            # print(len(batch))
+            y_pred = self.detector.predict(batch, batch_size=len(batch), verbose=0)
+            y_pred_bool = np.argmax(y_pred, axis=1)
+            pred.append(y_pred_bool)
+
+        s = []
+        for i in pred:
+            s.append(np.sum(i))
+
+        max_image = image.copy()
+        min_image = image.copy()
+
+        ind = np.argmax(s)
+        show_value = s[ind]
+        show_value = str(show_value) + " (max)"
+        max_image = draw_result_v2(max_image,ind,pred,self.parking_places,show_value)
+        max_image = cv2.resize(max_image,(1080,720))
+        if(self.count%30==0):
+            cv2.imwrite(os.path.join(os.getcwd(), "image_" + str(self.camera_id) + ".jpg"), max_image)
+            with open(os.path.join(os.getcwd(),'data.json'), 'w') as f:
+                json.dump({"value":str(s[ind])}, f)
+
+
+        ind = np.argmin(s)
+        show_value = s[ind]
+        show_value = str(show_value) + " (min)"
+        min_image = draw_result_v2(min_image,ind,pred,self.parking_places,show_value)
+        min_image = cv2.resize(min_image, (1080, 720))
+        numpy_horizontal_concat = np.concatenate((min_image, max_image), axis=0)
+        print(1./(time()-t))
+
+      #  time.sleep(0.1)
 
         return numpy_horizontal_concat
