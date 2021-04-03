@@ -75,7 +75,7 @@ def video_feed_3():
 @app.route('/')
 def index():
     """Video streaming home page."""
-    with codecs.open(os.path.join(os.getcwd(),'templates\index.html'), 'r', 'utf-8') as f:
+    with codecs.open(os.path.join(os.getcwd(),'templates','index.html'), 'r', 'utf-8') as f:
         all = f.read()
         num = get_free_from_json()
         all = all.replace("-1", num)
