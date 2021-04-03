@@ -178,9 +178,9 @@ https://github.com/OlafenwaMoses/ImageAI#installation
        
 - Скачать  модель и добавить ее в папку проекта 
 
-https://github.com/OlafenwaMoses/ImageAI/releases/download/essentials-v5/resnet50_coco_best_v2.1.0.h5
+https://disk.yandex.ru/d/abwzNvzqsmM8Dg
 
-- Изменить пути для файлов camera_1.mp4 и camera_3.mp4
+- `python telegram_bot.py`
 - `python stream.py`
 
 ##
